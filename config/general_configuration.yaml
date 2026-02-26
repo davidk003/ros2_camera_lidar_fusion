@@ -3,11 +3,11 @@ lidar:
   frame_id: rslidar
 
 camera:
-  image_topic: /pcl_human_segmentation/camera/raw_image
+  image_topic: /oak/rgb/image_raw
   projected_topic: /pcl_human_segmentation/camera/projected_image
   image_size:
     width: 640
-    height: 480
+    height: 400
   frame_id: camera
 
 chessboard:
