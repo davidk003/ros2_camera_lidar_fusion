@@ -30,7 +30,7 @@ RUN python3 -m pip install --no-cache-dir --ignore-installed \
     matplotlib==3.6.0 \
     pandas \
     open3d \
-    depthai
+    "depthai>=2,<3"
 
 ###### Install package dependencies
 RUN apt-get install -y \

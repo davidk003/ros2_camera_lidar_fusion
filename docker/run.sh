@@ -10,11 +10,13 @@ if [ $isRunning -eq 0 ]; then
         -it \
         --env="DISPLAY" \
         --env="QT_X11_NO_MITSHM=1" \
+        --env="RMW_IMPLEMENTATION=rmw_fastrtps_cpp" \
         --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
         --net host \
         --ipc host \
         --pid host \
         --privileged \
+        -v /dev/bus/usb:/dev/bus/usb \
         --volume `pwd`/../:/ros2_ws/src/ros2_camera_lidar_fusion \
         -w /ros2_ws \
         ros2_camera_lidar_fusion:latest
