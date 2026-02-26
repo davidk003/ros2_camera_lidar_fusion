@@ -20,15 +20,18 @@ RUN rosdep init && rosdep update
 ###### Install python packages
 RUN apt-get install -y \
     python-is-python3 \
-    python3-pip
+    python3-pip \
+    libusb-1.0-0
 
-RUN pip install opencv-python
-RUN pip install --upgrade numpy==1.24.3
-RUN pip install matplotlib==3.6.0
-RUN pip install \
+RUN python3 -m pip install --no-cache-dir --upgrade pip
+RUN python3 -m pip install --no-cache-dir --ignore-installed \
+    opencv-python \
+    numpy==1.24.3 \
+    matplotlib==3.6.0 \
     pandas \
-    open3d
-    
+    open3d \
+    depthai
+
 ###### Install package dependencies
 RUN apt-get install -y \
     git \
